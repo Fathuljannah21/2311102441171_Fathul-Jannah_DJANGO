@@ -83,7 +83,7 @@ def artikel_add(request):
             print(forms.error_class)
     forms = Artikelform()
     context = {
-        'title': 'Daftar Katalog',
+        'title': 'Daftar Artikel',
         'form': forms
     }
     return render(request, template_name, context)
@@ -93,7 +93,7 @@ def artikel_detail(request, id_artikel):
     template_name = "dashboard/snippets/artikel_detail.html"
     artikel = Artikel.objects.get(id=id_artikel)
     context = {
-        'title': artikel.nama,
+        'title': artikel.judul,
         'artikel': artikel
     }
     return render(request, template_name, context)

@@ -19,6 +19,8 @@ class Artikel(models.Model):
     author = models.ForeignKey(User, on_delete=models.PROTECT)
     thumbnail = models.ImageField(upload_to='artikel', blank=True, null=True)
 
+    create_at = models.DateTimeField(auto_now_add=True)
+
     def __str__(self):
         return self.judul
 
